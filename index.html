@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthik Matriculation Hr. Sec. School | Excellence Since 1997</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e40af;
+            --secondary: #7c3aed;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        .page {
+            display: none;
+            margin-top: 80px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .hero {
+            height: 90vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .stats {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .section-alt {
+            background: var(--light);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .about-intro {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .vision-mission {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .vm-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .vm-card h3 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .vm-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .vm-card li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .vm-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .management-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .management-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .management-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .management-photo {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+        }
+
+        .management-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .management-info h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .management-info .role {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .management-info .qualification {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .management-message {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+        }
+
+        .management-message h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .management-message p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .groups-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .group-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .group-card:hover {
+            transform: scale(1.05);
+        }
+
+        .group-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .group-card ul {
+            list-style: none;
+        }
+
+        .group-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .group-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .facility-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .facility-icon {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 4rem;
+        }
+
+        .facility-content {
+            padding: 2rem;
+        }
+
+        .facility-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .admission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .admission-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .admission-card h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .admission-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .admission-card li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            border-bottom: 1px solid #eee;
+        }
+
+        .admission-card li::before {
+            content: '📄';
+            position: absolute;
+            left: 0;
+        }
+
+        .school-hours {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin-top: 3rem;
+        }
+
+        .school-hours h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .hours-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .hours-item strong {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .gallery-caption {
+            padding: 1.5rem;
+            background: white;
+            text-align: center;
+        }
+
+        .gallery-caption h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-caption p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .vision-mission,
+            .admission-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/images/logo.jpg" alt="Karthik School Logo">
+                <span>KARTHIK SCHOOL</span>
+            </div>
+            <ul class="nav-links">
+                <li><a onclick="navigateTo('home')" class="active">Home</a></li>
+                <li><a onclick="navigateTo('about')">About</a></li>
+                <li><a onclick="navigateTo('academics')">Academics</a></li>
+                <li><a onclick="navigateTo('facilities')">Facilities</a>
+            <a onclick="navigateTo('gallery')">Gallery</a></li>
+                <li><a onclick="navigateTo('gallery')">Gallery</a></li>
+                <li><a onclick="navigateTo('admissions')">Admissions</a></li>
+                <li><a onclick="navigateTo('contact')">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">☰</div>
+        </div>
+    </nav>
+
+    <div id="home" class="page active">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>KARTHIK MATRICULATION HR. SEC. SCHOOL</h1>
+                <p>Success Through Learning, Transforming Dreams into Reality</p>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Excellence in Education Since 1997 | Chennai</p>
+                <div class="cta-buttons">
+                    <a onclick="navigateTo('admissions')" class="btn btn-primary" style="cursor: pointer;">Apply for
+                        Admission</a>
+                    <a onclick="navigateTo('about')" class="btn btn-secondary" style="cursor: pointer;">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">28+</div>
+                    <div>Years of Excellence</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.3★</div>
+                    <div>Parent Rating</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1000+</div>
+                    <div>Happy Students</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div>Higher Secondary Groups</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Why Choose Karthik School?</h2>
+                <div class="facilities-grid">
+                    <div class="facility-card">
+                        <div class="facility-icon">🎯</div>
+                        <div class="facility-content">
+                            <h3>Holistic Education</h3>
+                            <p>Complete development combining academic excellence with character building, creativity,
+                                and leadership qualities.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">💻</div>
+                        <div class="facility-content">
+                            <h3>Modern Learning</h3>
+                            <p>Digital classrooms with smart panels and interactive boards for engaging learning
+                                experiences.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">👨‍🏫</div>
+                        <div class="facility-content">
+                            <h3>Expert Faculty</h3>
+                            <p>Dedicated teachers committed to nurturing every student's unique potential and fostering
+                                love for learning.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">🏆</div>
+                        <div class="facility-content">
+                            <h3>Proven Results</h3>
+                            <p>28+ years of educational excellence with outstanding academic achievements.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">🎨</div>
+                        <div class="facility-content">
+                            <h3>Extra-Curricular</h3>
+                            <p>Vibrant activities including sports, arts, music, and cultural programs.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">📚</div>
+                        <div class="facility-content">
+                            <h3>Kreedo Curriculum</h3>
+                            <p>Innovative kindergarten program through play-based learning for holistic development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="about" class="page">
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">About Us</h2>
+                <div class="about-intro">
+                    <p>Since its inception in 1997, Karthik Matriculation Higher Secondary School has embarked on a
+                        transformative journey, beginning with the introduction of kindergarten and primary classes.
+                        Through unwavering dedication and continuous efforts, we have evolved into a distinguished
+                        Matriculation Higher Secondary School.</p>
+                    <p>Our commitment lies in fostering an enriching environment that promotes holistic development,
+                        where students are empowered to explore their potential and strive for excellence in every facet
+                        of their lives.</p>
+                </div>
+
+                <div class="vision-mission">
+                    <div class="vm-card">
+                        <h3>🎯 Our Vision</h3>
+                        <p style="font-style: italic; color: var(--secondary); margin-bottom: 1rem;">"எண்ணென்ப ஏனை
+                            எழுத்தென்ப இவ்விரண்டும் கண்ணென்ப வாழும் உயிர்க்கு"</p>
+                        <p>Our mission is to nurture and empower students, guiding them towards becoming well-rounded
+                            individuals in their social, economic, political and personal spheres. Established with the
+                            aim of fostering positive societal change, our school is committed to instilling values
+                            deeply rooted in the profound teachings of Thirukkural.</p>
+                    </div>
+                    <div class="vm-card">
+                        <h3>🚀 Our Mission</h3>
+                        <ul>
+                            <li>Foster a nurturing environment where students feel empowered to freely express their
+                                thoughts and ideas without fear</li>
+                            <li>Provide high-quality education that blends theoretical knowledge with practical
+                                applications</li>
+                            <li>Equip students with essential life skills and cultivate awareness about current affairs
+                            </li>
+                            <li>Champion inclusivity and empathy by acknowledging marginalized communities</li>
+                            <li>Embrace the richness of life, celebrate diverse cultures, and preserve our heritage</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 class="section-title" style="margin-top: 4rem;">Our Leadership</h2>
+                <div class="management-grid">
+                    <div class="management-card">
+                        <div class="management-photo">👤</div>
+                        <div class="management-info">
+                            <h3>Mr. R. SARGUNAM</h3>
+                            <div class="role">Founder</div>
+                            <div class="qualification">B.Sc., B.Ed.</div>
+                        </div>
+                    </div>
+                    <div class="management-card">
+                        <div class="management-photo">👤</div>
+                        <div class="management-info">
+                            <h3>Mr. S. KARTHIKEYAN</h3>
+                            <div class="role">Correspondent</div>
+                            <div class="qualification">M.S.W</div>
+                        </div>
+                    </div>
+                    <div class="management-card">
+                        <div class="management-photo">👤</div>
+                        <div class="management-info">
+                            <h3>Ms. K. INDUMATHI</h3>
+                            <div class="role">Director</div>
+                            <div class="qualification">M.Sc., M.Ed.</div>
+                        </div>
+                    </div>
+                    <div class="management-card">
+                        <div class="management-photo">👤</div>
+                        <div class="management-info">
+                            <h3>Mr. G. DHILLI BABU</h3>
+                            <div class="role">Principal</div>
+                            <div class="qualification">M.Sc., M.Phil., M.Ed.</div>
+                        </div>
+                    </div>
+                    <div class="management-card">
+                        <div class="management-photo">👤</div>
+                        <div class="management-info">
+                            <h3>Ms. M. VIJAYALAKSHMI</h3>
+                            <div class="role">Vice-Principal</div>
+                            <div class="qualification">M.Sc., B.Ed.</div>
+                        </div>
+                    </div>
+                    <div class="management-card">
+                        <div class="management-photo">👤</div>
+                        <div class="management-info">
+                            <h3>Ms. B. THENMOZHI</h3>
+                            <div class="role">Administrator</div>
+                            <div class="qualification">M.A., B.Ed.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="management-message">
+                    <h3>💬 Message from the Director</h3>
+                    <p><strong>"Success Through Learning, Transforming Dreams into Reality, Futures Blossom"</strong>
+                    </p>
+                    <p>I am humbled and honored to witness the profound impact that education has on the lives of our
+                        students. Education is not just about acquiring knowledge; it is a journey of self-discovery,
+                        empowerment, and transformation.</p>
+                    <p>At Karthik Matriculation Higher Secondary School, we believe that education is the key to
+                        unlocking endless possibilities and shaping a brighter future. It is through education that
+                        children develop the skills, knowledge, and confidence to navigate life's challenges and pursue
+                        their dreams with determination.</p>
+                    <p>Through our holistic approach to education, we aim to foster not only academic excellence but
+                        also the development of character, values, and social responsibility. We firmly believe that a
+                        school plays a pivotal role in shaping a child's behavior and outlook towards life.</p>
+                    <p>Together, let us nurture the next generation of leaders, innovators, and changemakers who will
+                        make a difference in the world.</p>
+                    <p style="margin-top: 1.5rem;"><em>- Ms. K. Indumathi, Director</em></p>
+                </div>
+
+                <div class="management-message">
+                    <h3>💬 Message from the Principal</h3>
+                    <p><strong>"Education is the most powerful weapon which you can use to change the world"</strong>
+                    </p>
+                    <p>For us, education is more than the curriculum, as we firmly believe that each child is a unique
+                        individual who possesses inherent potential of different types. Our objective is to identify,
+                        tap and develop this potential of the students.</p>
+                    <p>Education involves far more than the acquisition of knowledge. The real achievement of education
+                        is teaching students to enjoy the process of learning and to apply all that they learn to real
+                        life situations.</p>
+                    <p>There is a spark in every child's mind. Karthik school believes that this spark has to be
+                        transformed into a brilliance that benefits not just the child but the society as well. Hence,
+                        we provide an education that would develop all aspects of each individual student which is
+                        relevant to his/her needs, which will prepare him/her for life and face challenges of the
+                        competitive world.</p>
+                    <p>Today the role of school is not only to pursue academic excellence but also to motivate and
+                        empower its students to be lifelong learners, critical thinkers and productive members of an
+                        ever changing global society.</p>
+                    <p style="margin-top: 1.5rem;"><em>- Mr. G. Dhilli Babu, Principal</em></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="academics" class="page">
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Academic Programs</h2>
+
+                <div class="management-message">
+                    <h3>🎓 Curriculum Framework</h3>
+                    <p><strong>Kindergarten - Kreedo Curriculum:</strong> Our kindergarten program focuses on Literacy
+                        skills (Language), Numeracy skills (Maths), Themes (EVS), Sensorial skills and Cognitive skills.
+                        All these areas of development begin with play or activities first through our Kreedo lab,
+                        helping improve the socio-emotional quotient in children.</p>
+                    <p><strong>Primary to Higher Secondary - Samacheer Kalvi:</strong> We follow the Samacheer Kalvi
+                        syllabus, ensuring comprehensive education aligned with state board standards while
+                        incorporating modern teaching methodologies.</p>
+                </div>
+
+                <h2 class="section-title" style="margin-top: 4rem;">Higher Secondary Groups</h2>
+                <div class="groups-grid">
+                    <div class="group-card">
+                        <h3>GROUP 1</h3>
+                        <p style="margin-bottom: 1rem; opacity: 0.9;">Engineering & Technology Stream</p>
+                        <ul>
+                            <li>Mathematics</li>
+                            <li>Physics</li>
+                            <li>Chemistry</li>
+                            <li>Computer Science</li>
+                        </ul>
+                    </div>
+                    <div class="group-card">
+                        <h3>GROUP 2</h3>
+                        <p style="margin-bottom: 1rem; opacity: 0.9;">Medical & Allied Sciences</p>
+                        <ul>
+                            <li>Mathematics</li>
+                            <li>Physics</li>
+                            <li>Chemistry</li>
+                            <li>Biology</li>
+                        </ul>
+                    </div>
+                    <div class="group-card">
+                        <h3>GROUP 3</h3>
+                        <p style="margin-bottom: 1rem; opacity: 0.9;">Pure Biology Stream</p>
+                        <ul>
+                            <li>Physics</li>
+                            <li>Chemistry</li>
+                            <li>Botany</li>
+                            <li>Zoology</li>
+                        </ul>
+                    </div>
+                    <div class="group-card">
+                        <h3>GROUP 4</h3>
+                        <p style="margin-bottom: 1rem; opacity: 0.9;">Commerce with Computer</p>
+                        <ul>
+                            <li>Economics</li>
+                            <li>Commerce</li>
+                            <li>Accountancy</li>
+                            <li>Computer Application</li>
+                        </ul>
+                    </div>
+                    <div class="group-card">
+                        <h3>GROUP 5</h3>
+                        <p style="margin-bottom: 1rem; opacity: 0.9;">Commerce with Maths</p>
+                        <ul>
+                            <li>Economics</li>
+                            <li>Commerce</li>
+                            <li>Accountancy</li>
+                            <li>Business Mathematics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="facilities" class="page">
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">World-Class Facilities</h2>
+                <div class="facilities-grid">
+                    <div class="facility-card">
+                        <div class="facility-icon">💻</div>
+                        <div class="facility-content">
+                            <h3>Digital Classrooms</h3>
+                            <p>State-of-the-art digital classrooms equipped with smart panels, smart boards, and
+                                televisions. Our knowledge centre provides students with comprehensive computer
+                                education covering coding, digital literacy, and software proficiency.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">📚</div>
+                        <div class="facility-content">
+                            <h3>Library - Knowledge Centre</h3>
+                            <p>Our library is a vibrant hub of knowledge offering a vast collection of books, resources
+                                and digital materials. With cozy reading corners and modern facilities, it provides a
+                                conducive environment for research, study and relaxation.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">🔬</div>
+                        <div class="facility-content">
+                            <h3>Advanced Laboratories</h3>
+                            <p>Dynamic spaces equipped with the latest technology and tools for hands-on
+                                experimentation. Students engage in scientific inquiry, problem-solving and innovation
+                                under the guidance of skilled instructors.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">🎭</div>
+                        <div class="facility-content">
+                            <h3>Semporul Mandram (Auditorium)</h3>
+                            <p>Our auditorium serves as a seminar and meeting hall equipped with the latest technology
+                                of light and sound systems, perfect for cultural events, assemblies, and presentations.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">⚽</div>
+                        <div class="facility-content">
+                            <h3>Sports & Recreation</h3>
+                            <p>Comprehensive sports facilities promoting physical fitness, teamwork, and competitive
+                                spirit. Students participate in various sports and physical activities as part of
+                                holistic development.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">🎨</div>
+                        <div class="facility-content">
+                            <h3>Extra-Curricular Activities</h3>
+                            <p>We believe education extends far beyond the classroom. Our vibrant array of
+                                extra-curricular activities offers students the opportunity to ignite their passions,
+                                develop new skills and foster lifelong friendships.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    
+    <div id="gallery" class="page">
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">School Gallery</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem; color: #666;">
+                    Explore our vibrant school life through these glimpses of our facilities, events, and activities.
+                </p>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-image"></div>
+                        <div class="gallery-caption">
+                            <h3>School Building</h3>
+                            <p>Our modern and spacious campus</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-image"></div>
+                        <div class="gallery-caption">
+                            <h3>Classroom Learning</h3>
+                            <p>Interactive and engaging education</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-image"></div>
+                        <div class="gallery-caption">
+                            <h3>Sports Activities</h3>
+                            <p>Promoting fitness and teamwork</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-image"></div>
+                        <div class="gallery-caption">
+                            <h3>Science Laboratory</h3>
+                            <p>Hands-on experiments and discovery</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-image"></div>
+                        <div class="gallery-caption">
+                            <h3>Library</h3>
+                            <p>A world of knowledge and learning</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-image"></div>
+                        <div class="gallery-caption">
+                            <h3>Cultural Events</h3>
+                            <p>Celebrating talent and creativity</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="management-message" style="margin-top: 3rem;">
+                    <h3> Share Your Moments</h3>
+                    <p>We regularly update our gallery with photos from school events, activities, and achievements. Stay connected with us on social media to see the latest updates from Karthik School.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<div id="admissions" class="page">
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Admissions</h2>
+
+                <div class="cta-buttons" style="margin-bottom: 3rem;">
+                    <button onclick="navigateTo('admission-form')" class="btn btn-primary" style="cursor: pointer;">
+                        📝 Apply Online - Fill Admission Form
+                    </button>
+                </div>
+
+                <div class="admission-grid">
+                    <div class="admission-card">
+                        <h3>📋 Documents Required</h3>
+                        <ul>
+                            <li>A copy of Birth Certificate with name</li>
+                            <li>A copy of Community Certificate and Aadhaar card</li>
+                            <li>A family photograph (Father, Mother, Child and siblings if any)</li>
+                            <li>Five passport size photographs of the child</li>
+                            <li>Original Transfer Certificate from previous school (not for LKG)</li>
+                            <li>Original Progress Report (not for LKG)</li>
+                        </ul>
+                    </div>
+
+                    <div class="admission-card">
+                        <h3>💰 Fee Structure</h3>
+                        <p style="padding: 1rem 0; line-height: 1.8;">School fee should be paid annually or in two terms
+                            (May and October). For detailed fee structure and payment options, please contact the school
+                            office.</p>
+                        <div style="background: var(--light); padding: 1.5rem; border-radius: 10px; margin-top: 1rem;">
+                            <p><strong>Contact for Fees:</strong></p>
+                            <p style="margin-top: 0.5rem;">📞 9789021010</p>
+                            <p>✉️ karthik.sch@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="school-hours">
+                    <h3>🕐 School Hours</h3>
+                    <div class="hours-grid">
+                        <div class="hours-item">
+                            <strong>LKG</strong>
+                            <div>8:45 AM - 12:30 PM</div>
+                        </div>
+                        <div class="hours-item">
+                            <strong>UKG</strong>
+                            <div>8:45 AM - 2:30 PM</div>
+                        </div>
+                        <div class="hours-item">
+                            <strong>Classes I - IX</strong>
+                            <div>8:45 AM - 4:45 PM</div>
+                        </div>
+                        <div class="hours-item">
+                            <strong>Classes X - XII</strong>
+                            <div>8:45 AM - 5:00 PM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="management-message" style="margin-top: 3rem;">
+                    <h3>📝 Admission Process</h3>
+                    <p><strong>Step 1:</strong> Fill out the online admission form or contact the school office.</p>
+                    <p><strong>Step 2:</strong> Submit the completed application form along with all required documents.
+                    </p>
+                    <p><strong>Step 3:</strong> Attend the interaction session with school management (if applicable).
+                    </p>
+                    <p><strong>Step 4:</strong> Upon selection, complete the fee payment and other formalities.</p>
+                    <p style="margin-top: 1.5rem; padding: 1rem; background: var(--light); border-radius: 10px;">
+                        <strong>📞 For Admission Enquiries:</strong><br>
+                        Call: 9789021010<br>
+                        Email: karthik.sch@gmail.com<br>
+                        Visit: #54/6, Ambal Nagar, Senneerkuppam, Poonamallee, Chennai - 600 056
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="admission-form" class="page">
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Online Admission Application</h2>
+
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="management-message">
+                        <h3>📋 Application Form</h3>
+                        <p style="margin-bottom: 2rem;">Please fill out all required fields carefully. All information
+                            will be sent to the school administration for review.</p>
+
+                        <form action="https://formsubmit.co/karthik.sch@gmail.com" method="POST">
+                            <input type="hidden" name="_subject" value="New Admission Application - Karthik School">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="text" name="_honey" style="display:none">
+
+                            <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
+                                <h4 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.3rem;">Student
+                                    Information</h4>
+
+                                <div style="display: grid; gap: 1.5rem;">
+                                    <div>
+                                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Student
+                                            Name (as per Birth Certificate) *</label>
+                                        <input type="text" name="studentName" required
+                                            style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                                    </div>
+
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                        <div>
+                                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Date
+                                                of Birth *</label>
+                                            <input type="date" name="dob" required
+                                                style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                                        </div>
+                                        <div>
+                                            <label
+                                                style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Gender
+                                                *</label>
+                                            <select name="gender" required
+                                                style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                                                <option value="">Select Gender</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                        <div>
+                                            <label
+                                                style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Class
+                                                Seeking Admission *</label>
+                                            <select name="classAdmission" required
+                                                style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                                                <option value="">Select Class</option>
+                                                <option value="LKG">LKG</option>
+                                                <option value="UKG">UKG</option>
+                                                <option value="I">Class I</option>
+                                                <option value="II">Class II</option>
+                                                <option value="III">Class III</option>
+                                                <option value="IV">Class IV</option>
+                                                <option value="V">Class V</option>
+                                                <option value="VI">Class VI</option>
+                                                <option value="VII">Class VII</option>
+                                                <option value="VIII">Class VIII</option>
+                                                <option value="IX">Class IX</option>
+                                                <option value="X">Class X</option>
+                                                <option value="XI">Class XI</option>
+                                                <option value="XII">Class XII</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label
+                                                style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Blood
+                                                Group</label>
+                                            <input type="text" name="bloodGroup"
+                                                style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;"
+                                                placeholder="e.g., O+">
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Aadhaar
+                                            Number</label>
+                                        <input type="text" name="aadhaar" pattern="[0-9]{12}"
+                                            style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;"
+                                            placeholder="12-digit Aadhaar number">
+                                    </div>
+
+                                    <div>
+                                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Mother
+                                            Tongue *</label>
+                                        <input type="text" name="motherTongue" required
+                                            style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                                    </div>
+
+                                    <div>
+                                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Religion
+                                            / Caste / Community *</label>
+                                        <input type="text" name="community" required
+                                            style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
+                                <h4 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.3rem;">Father's
+                                    Information</h4>
+
+                                <div style="display: grid; gap: 1.5rem;">
+                                    <div>
+                                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Father's
+                                            Name *</label>
+                                        <input type="text" name="fatherName" required
+                                            style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                                    </div>
+
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                        <div>
+                                            <label
+                                                style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Occupation
+                                                *</label>
+                                            <input type="text" name="fatherOccupation" required
+                                                style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                                        </div>
+                                        <div>
+                                            <label
+                                                style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Mobile
+                                                Number *</label>
+                                            <input type="tel" name="fatherMobile" required pattern="[0-9]{10}"
+                                                style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;"
+                                                placeholder="10-digit mobile number">
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email
+                                            Address</label>
+                                        <input type="email" name="fatherEmail"
+                                            style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
+                                <h4 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.3rem;">Mother's
+                                    Information</h4>
+
+                                <div style="display: grid; gap: 1.5rem;">
+                                    <div>
+                                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Mother's
+                                            Name *</label>
+                                        <input type="text" name="motherName" required
+                                            style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                                    </div>
+
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                        <div>
+                                            <label
+                                                style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Occupation
+                                                *</label>
+                                            <input type="text" name="motherOccupation" required
+                                                style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                                        </div>
+                                        <div>
+                                            <label
+                                                style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Mobile
+                                                Number *</label>
+                                            <input type="tel" name="motherMobile" required pattern="[0-9]{10}"
+                                                style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;"
+                                                placeholder="10-digit mobile number">
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email
+                                            Address</label>
+                                        <input type="email" name="motherEmail"
+                                            style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
+                                <h4 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.3rem;">Contact
+                                    Information</h4>
+
+                                <div style="display: grid; gap: 1.5rem;">
+                                    <div>
+                                        <label
+                                            style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Permanent
+                                            Address *</label>
+                                        <textarea name="address" required rows="3"
+                                            style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; font-family: inherit;"></textarea>
+                                    </div>
+
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                        <div>
+                                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">City
+                                                *</label>
+                                            <input type="text" name="city" required
+                                                style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                                        </div>
+                                        <div>
+                                            <label
+                                                style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Pincode
+                                                *</label>
+                                            <input type="text" name="pincode" required pattern="[0-9]{6}"
+                                                style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;"
+                                                placeholder="6-digit pincode">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
+                                <h4 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.3rem;">Previous
+                                    School Details</h4>
+
+                                <div style="display: grid; gap: 1.5rem;">
+                                    <div>
+                                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Previous
+                                            School Name</label>
+                                        <input type="text" name="previousSchool"
+                                            style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;"
+                                            placeholder="Not applicable for LKG">
+                                    </div>
+
+                                    <div>
+                                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Last
+                                            Class Attended</label>
+                                        <input type="text" name="lastClass"
+                                            style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 2rem;">
+                                <button type="submit" class="btn btn-primary"
+                                    style="cursor: pointer; font-size: 1.1rem; padding: 1.2rem 3rem;">
+                                    📧 Submit Application
+                                </button>
+                                <button type="button" onclick="navigateTo('admissions')" class="btn btn-secondary"
+                                    style="cursor: pointer; margin-left: 1rem; background: #6b7280; color: white;">
+                                    ← Back to Admissions
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="contact" class="page">
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>📍 Our Location</h3>
+                        <div class="contact-info">
+                            <p style="line-height: 1.8;">
+                                <strong>Karthik Matriculation Hr. Sec. School</strong><br>
+                                (Ranganathan Punithavathi Ammal Memorial Educational Trust)<br><br>
+                                #54/6, Ambal Nagar<br>
+                                (Behind EB), Senneerkuppam<br>
+                                Poonamallee<br>
+                                Chennai - 600 056<br>
+                                Tamil Nadu, India
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>📞 Get in Touch</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <span style="font-size: 1.5rem;">📱</span>
+                                <div>
+                                    <strong>Phone:</strong><br>
+                                    <a href="tel:9789021010">9789021010</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <span style="font-size: 1.5rem;">✉️</span>
+                                <div>
+                                    <strong>Email:</strong><br>
+                                    <a href="mailto:karthik.sch@gmail.com">karthik.sch@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <span style="font-size: 1.5rem;">🌐</span>
+                                <div>
+                                    <strong>Website:</strong><br>
+                                    <a href="https://karthikschool.com" target="_blank">karthikschool.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>🌐 Follow Us</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <span style="font-size: 1.5rem;">📘</span>
+                                <div>
+                                    <strong>Facebook:</strong><br>
+                                    <a href="https://facebook.com/karthikmatriculationschool"
+                                        target="_blank">@karthikmatriculationschool</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <span style="font-size: 1.5rem;">📸</span>
+                                <div>
+                                    <strong>Instagram:</strong><br>
+                                    <a href="https://instagram.com/karthikmhss" target="_blank">@karthikmhss</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <span style="font-size: 1.5rem;">📍</span>
+                                <div>
+                                    <strong>Google Maps:</strong><br>
+                                    <a href="https://maps.google.com/?q=Karthik+Matriculation+School+Senneerkuppam"
+                                        target="_blank">View on Map</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="management-message" style="margin-top: 3rem;">
+                    <h3>📅 Office Hours</h3>
+                    <p><strong>Monday to Friday:</strong> 9:00 AM - 4:00 PM</p>
+                    <p><strong>Saturday:</strong> 9:00 AM - 1:00 PM</p>
+                    <p><strong>Sunday:</strong> Closed</p>
+                    <p style="margin-top: 1.5rem; font-style: italic; color: #666;">
+                        For urgent matters outside office hours, please call our main contact number.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a onclick="navigateTo('home')">Home</a>
+            <a onclick="navigateTo('about')">About</a>
+            <a onclick="navigateTo('academics')">Academics</a>
+            <a onclick="navigateTo('facilities')">Facilities</a>
+            <a onclick="navigateTo('gallery')">Gallery</a>
+            <a onclick="navigateTo('admissions')">Admissions</a>
+            <a onclick="navigateTo('contact')">Contact</a>
+        </div>
+        <p style="margin-top: 1rem;">&copy; 2025 Karthik Matriculation Higher Secondary School. All rights reserved.</p>
+        <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">Ranganathan Punithavathi Ammal Memorial
+            Educational Trust</p>
+        <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 1rem;">Excellence in Education Since 1997</p>
+    </footer>
+
+    <script>
+        function navigateTo(pageId) {
+            var pages = document.querySelectorAll('.page');
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].classList.remove('active');
+            }
+
+            var targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            var navLinks = document.querySelectorAll('.nav-links a');
+            for (var i = 0; i < navLinks.length; i++) {
+                navLinks[i].classList.remove('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMenu() {
+            var navLinks = document.querySelector('.nav-links');
+            if (navLinks) {
+                if (navLinks.style.display === 'flex') {
+                    navLinks.style.display = 'none';
+                } else {
+                    navLinks.style.display = 'flex';
+                }
+            }
+        }
+
+        window.addEventListener('scroll', function () {
+            var navbar = document.querySelector('nav');
+            if (navbar) {
+                if (window.scrollY > 50) {
+                    navbar.style.padding = '0.5rem 0';
+                } else {
+                    navbar.style.padding = '1rem 0';
+                }
+            }
+        });
+
+        var observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        var observer = new IntersectionObserver(function (entries) {
+            for (var i = 0; i < entries.length; i++) {
+                if (entries[i].isIntersecting) {
+                    entries[i].target.style.opacity = '1';
+                    entries[i].target.style.transform = 'translateY(0)';
+                }
+            }
+        }, observerOptions);
+
+        window.addEventListener('load', function () {
+            var animatedElements = document.querySelectorAll('.facility-card, .group-card, .management-card, .admission-card, .contact-card');
+            for (var i = 0; i < animatedElements.length; i++) {
+                animatedElements[i].style.opacity = '0';
+                animatedElements[i].style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(animatedElements[i]);
+            }
+        });
+    </script>
+</body>
+
+</html>
+
