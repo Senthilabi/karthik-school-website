@@ -1642,30 +1642,67 @@
             <div class="container">
                 <h2 class="section-title">School Events</h2>
 
-                <!-- Instagram Feed -->
-                <div style="margin-bottom: 3rem;">
-                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 1rem; text-align: center;">
-                        📸 Instagram Gallery
+                <!-- FUTURE EVENTS (Manual Updates) -->
+                <div style="margin-bottom: 4rem;">
+                    <h3
+                        style="color: var(--primary); font-size: 2rem; border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 2rem; display: inline-block;">
+                        🚀 Upcoming Events
                     </h3>
-                    <div class="instagram-feed">
-                        <div class="elfsight-app-e8f55a29-3d97-4ac5-9d12-d29f2c6d92e5" data-elfsight-app-lazy></div>
+
+                    <div id="upcoming-events-container" class="events-grid"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <!-- Events will be loaded here via JavaScript -->
+                        <div style="text-align: center; width: 100%; color: #666;">Loading events...</div>
                     </div>
-                    <p style="text-align: center; color: #666; margin-top: 1rem; font-style: italic;">
-                        Follow us on Instagram to see our latest school activities and events
-                    </p>
                 </div>
 
-                <!-- YouTube Playlist -->
-                <div style="margin-bottom: 3rem;">
-                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 1rem; text-align: center;">
-                        🎥 YouTube Videos
+                <!-- PAST EVENTS (Automated via Social Media) -->
+                <div style="background: #f1f5f9; padding: 2.5rem; border-radius: 20px;">
+                    <h3
+                        style="color: var(--primary); font-size: 2rem; border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 2rem; display: inline-block;">
+                        ⏮️ Past Events Gallery
                     </h3>
-                    <div class="youtube-gallery">
-                        <div class="elfsight-app-207d0f88-9661-44b6-aaea-321ffdf02f9a" data-elfsight-app-lazy></div>
-                    </div>
-                    <p style="text-align: center; color: #666; margin-top: 1rem; font-style: italic;">
-                        Watch our school events, programs, and special moments
+                    <p style="margin-bottom: 2rem; color: #666; font-size: 1.1rem;">
+                        Highlights from our recent activities. Follow us on social media to see these updates
+                        automatically!
                     </p>
+
+                    <div class="media-grid"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+                        <!-- Instagram (Images) -->
+                        <div>
+                            <h4
+                                style="text-align: center; margin-bottom: 1.5rem; color: var(--primary); font-size: 1.5rem;">
+                                📸 Photo Gallery (Instagram)</h4>
+                            <div class="instagram-feed" style="background: white; padding: 10px; border-radius: 12px;">
+                                <div class="elfsight-app-e8f55a29-3d97-4ac5-9d12-d29f2c6d92e5" data-elfsight-app-lazy>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- YouTube (Videos) -->
+                        <div>
+                            <h4
+                                style="text-align: center; margin-bottom: 1.5rem; color: var(--primary); font-size: 1.5rem;">
+                                🎥 Video Gallery (YouTube)</h4>
+                            <!-- Native Embed -->
+                            <div
+                                style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+                                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                                    src="https://www.youtube.com/embed?listType=user_uploads&list=karthikmatriculationhrsecs7756"
+                                    title="Latest Videos" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div style="text-align: center;">
+                                <a href="https://www.youtube.com/@karthikmatriculationhrsecs7756" target="_blank"
+                                    class="btn btn-primary">
+                                    View All Videos on YouTube
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1862,6 +1899,59 @@
         });
 
 
+
+        // Data Source for Events (simulate Google Sheet / API response)
+        // In the future, this can be replaced with: fetch('GOOGLE_SHEET_URL').then(...)
+        var eventsData = {
+            upcoming: [
+                {
+                    category: "Next Week",
+                    title: "Science Exhibition Preparation",
+                    description: "Students are finalizing their innovative projects for the annual science fair. Parents are welcome to visit during evening hours.",
+                    location: "📍 Main Auditorium",
+                    color: "var(--accent)"
+                },
+                {
+                    category: "Next Month",
+                    title: "Parent-Teacher Meeting",
+                    description: "Term 2 review meeting for all grades. Please check your student diary for the specific time slot allocated to you.",
+                    location: "📍 Classrooms",
+                    color: "var(--primary)"
+                }
+            ]
+        };
+
+        // Function to Render Events
+        function renderEvents() {
+            var container = document.getElementById('upcoming-events-container');
+            if (!container) return;
+
+            var html = '';
+
+            if (eventsData.upcoming.length === 0) {
+                html = '<div style="grid-column: 1/-1; text-align: center; color: #666; padding: 2rem;">No upcoming events scheduled at the moment.</div>';
+            } else {
+                eventsData.upcoming.forEach(function (event) {
+                    html += `
+                        <div class="event-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 5px solid ${event.color}; transition: transform 0.3s ease;">
+                            <div style="color: var(--primary); font-weight: 800; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 0.5rem; text-transform: uppercase;">
+                                ${event.category}
+                            </div>
+                            <h4 style="margin-bottom: 1rem; font-size: 1.4rem; color: #333;">${event.title}</h4>
+                            <p style="color: #555; font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                                ${event.description}
+                            </p>
+                            <div style="font-weight: 600; color: var(--secondary);">${event.location}</div>
+                        </div>
+                    `;
+                });
+            }
+
+            container.innerHTML = html;
+        }
+
+        // Initialize Events on Load
+        window.addEventListener('load', renderEvents);
     </script>
     <script src="https://static.elfsight.com/platform/platform.js" async></script>
 
