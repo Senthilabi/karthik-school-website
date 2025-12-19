@@ -12,6 +12,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            font-size: 12px;
+        }
+
         /* Updated School Theme Colors (Navy Blue & Gold) */
         :root {
             --primary: #003366;
@@ -27,6 +31,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--dark);
+            font-size: 1.4rem;
         }
 
         nav {
@@ -45,7 +50,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 0.5rem 1rem;
         }
 
         .logo {
@@ -107,7 +112,7 @@
 
         .page {
             display: none;
-            margin-top: 80px;
+            margin-top: 100px;
         }
 
         .page.active {
@@ -115,7 +120,7 @@
         }
 
         .hero {
-            height: 90vh;
+            min-height: 40vh;
             /* Green background as requested, independent of primary theme */
             background: linear-gradient(135deg, #2E8B57 0%, #1e5f3b 100%);
             display: flex;
@@ -166,14 +171,14 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
             opacity: 0.95;
         }
 
@@ -221,7 +226,7 @@
         .stats {
             background: var(--dark);
             color: white;
-            padding: 4rem 2rem;
+            padding: 1.5rem 1rem;
         }
 
         .stats-container {
@@ -229,7 +234,7 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
+            gap: 2rem;
             text-align: center;
         }
 
@@ -241,7 +246,7 @@
         }
 
         .section {
-            padding: 6rem 2rem;
+            padding: 1rem;
         }
 
         .section-alt {
@@ -255,8 +260,8 @@
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
             color: var(--primary);
             position: relative;
             padding-bottom: 1rem;
@@ -275,31 +280,31 @@
         }
 
         .about-intro {
-            max-width: 900px;
-            margin: 0 auto 4rem;
+            max-width: 1200px;
+            margin: 0 auto 1.5rem;
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             line-height: 1.8;
         }
 
         .vision-mission {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin-bottom: 4rem;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .vm-card {
             background: white;
-            padding: 3rem;
+            padding: 1.5rem;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .vm-card h3 {
             color: var(--primary);
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 1rem;
@@ -328,8 +333,8 @@
         .management-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         .management-card {
@@ -351,12 +356,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 5rem;
+            font-size: 3rem;
             color: white;
         }
 
         .management-info {
-            padding: 2rem;
+            padding: 1rem;
             text-align: center;
         }
 
@@ -379,10 +384,10 @@
 
         .management-message {
             background: white;
-            padding: 3rem;
+            padding: 1.5rem;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-top: 3rem;
+            margin-top: 1.5rem;
         }
 
         .management-message h3 {
@@ -400,14 +405,14 @@
         .groups-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         .group-card {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 2.5rem;
+            padding: 1.5rem;
             border-radius: 20px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease;
@@ -418,8 +423,8 @@
         }
 
         .group-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .group-card ul {
@@ -443,8 +448,8 @@
         .facilities-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         .facility-card {
@@ -462,13 +467,13 @@
         .facility-icon {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 3rem 2rem;
+            padding: 1.5rem;
             text-align: center;
-            font-size: 4rem;
+            font-size: 3rem;
         }
 
         .facility-content {
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
         .facility-content h3 {
@@ -480,13 +485,13 @@
         .admission-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
         .admission-card {
             background: white;
-            padding: 2.5rem;
+            padding: 1.5rem;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
@@ -518,9 +523,9 @@
         .school-hours {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 2.5rem;
+            padding: 1rem;
             border-radius: 20px;
-            margin-top: 3rem;
+            margin-top: 1rem;
         }
 
         .school-hours h3 {
@@ -551,13 +556,13 @@
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 1rem;
+            margin-top: 2rem;
         }
 
         .contact-card {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
@@ -619,8 +624,8 @@
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .gallery-item {
@@ -670,6 +675,35 @@
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                padding: 1rem 0;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 1rem;
+                width: 100%;
+            }
+
+            .nav-links a::after {
+                display: none;
             }
 
             .mobile-menu {
@@ -693,6 +727,26 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        @media (min-width: 1024px) {
+
+            .facilities-grid,
+            .management-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .vision-mission {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .groups-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
     </style>
 </head>
 
@@ -707,12 +761,9 @@
                 <li><a onclick="navigateTo('home')" class="active">Home</a></li>
                 <li><a onclick="navigateTo('about')">About</a></li>
                 <li><a onclick="navigateTo('academics')">Academics</a></li>
-                <li><a onclick="navigateTo('facilities')">Facilities</a>
-                    <a onclick="navigateTo('gallery')">Gallery</a>
-                </li>
+                <li><a onclick="navigateTo('facilities')">Facilities</a></li>
                 <li><a onclick="navigateTo('gallery')">Gallery</a></li>
                 <li><a onclick="navigateTo('admissions')">Admissions</a></li>
-                <li><a onclick="navigateTo('contact')">Contact</a></li>
             </ul>
             <div class="mobile-menu" onclick="toggleMenu()">☰</div>
         </div>
@@ -722,6 +773,8 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>KARTHIK MATRICULATION HR. SEC. SCHOOL</h1>
+                <p style="font-size: 1rem; margin-bottom: 1rem; opacity: 0.9;">(Ranganathan Punithavathi Ammal Memorial
+                    Educational Trust)</p>
                 <p>Success Through Learning, Transforming Dreams into Reality</p>
                 <p style="font-size: 1.2rem; opacity: 0.9;">Excellence in Education Since 1997 | Chennai</p>
                 <div class="cta-buttons">
@@ -846,7 +899,7 @@
                     </div>
                 </div>
 
-                <h2 class="section-title" style="margin-top: 4rem;">Our Leadership</h2>
+                <h2 class="section-title" style="margin-top: 3rem;">Our Leadership</h2>
                 <div class="management-grid">
                     <div class="management-card">
                         <div class="management-photo">👤</div>
@@ -957,7 +1010,7 @@
                         incorporating modern teaching methodologies.</p>
                 </div>
 
-                <h2 class="section-title" style="margin-top: 4rem;">Higher Secondary Groups</h2>
+                <h2 class="section-title" style="margin-top: 3rem;">Higher Secondary Groups</h2>
                 <div class="groups-grid">
                     <div class="group-card">
                         <h3>GROUP 1</h3>
@@ -1190,7 +1243,7 @@
             <div class="container">
                 <h2 class="section-title">Admissions</h2>
 
-                <div class="cta-buttons" style="margin-bottom: 3rem;">
+                <div class="cta-buttons" style="margin-bottom: 2rem;">
                     <button onclick="navigateTo('admission-form')" class="btn btn-primary" style="cursor: pointer;">
                         📝 Apply Online - Fill Admission Form
                     </button>
@@ -1214,7 +1267,7 @@
                         <p style="padding: 1rem 0; line-height: 1.8;">School fee should be paid annually or in two terms
                             (May and October). For detailed fee structure and payment options, please contact the school
                             office.</p>
-                        <div style="background: var(--light); padding: 1.5rem; border-radius: 10px; margin-top: 1rem;">
+                        <div style="background: var(--light); padding: 1rem; border-radius: 10px; margin-top: 1rem;">
                             <p><strong>Contact for Fees:</strong></p>
                             <p style="margin-top: 0.5rem;">📞 9789021010</p>
                             <p>✉️ karthik.sch@gmail.com</p>
@@ -1227,11 +1280,11 @@
                     <div class="hours-grid">
                         <div class="hours-item">
                             <strong>Kindergarten (KG)</strong>
-                            <div>8:00 AM - 3:00 PM</div>
+                            <div>8:30 AM - 3:00 PM</div>
                         </div>
                         <div class="hours-item">
                             <strong>Classes I - IX</strong>
-                            <div>8:00 AM - 3:45 PM</div>
+                            <div>8:30 AM - 3:45 PM</div>
                         </div>
                         <div class="hours-item">
                             <strong>Classes X - XII</strong>
@@ -1240,20 +1293,26 @@
                     </div>
                 </div>
 
-                <div class="management-message" style="margin-top: 3rem;">
-                    <h3>📝 Admission Process</h3>
-                    <p><strong>Step 1:</strong> Fill out the online admission form or contact the school office.</p>
-                    <p><strong>Step 2:</strong> Submit the completed application form along with all required documents.
-                    </p>
-                    <p><strong>Step 3:</strong> Attend the interaction session with school management (if applicable).
-                    </p>
-                    <p><strong>Step 4:</strong> Upon selection, complete the fee payment and other formalities.</p>
-                    <p style="margin-top: 1.5rem; padding: 1rem; background: var(--light); border-radius: 10px;">
-                        <strong>📞 For Admission Enquiries:</strong><br>
-                        Call: 9789021010<br>
-                        Email: karthik.sch@gmail.com<br>
-                        Visit: #54/6, Ambal Nagar, Senneerkuppam, Poonamallee, Chennai - 600 056
-                    </p>
+                <div class="management-message"
+                    style="margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div>
+                        <h3>📝 Admission Process</h3>
+                        <p><strong>Step 1:</strong> Fill out the online admission form or contact the school office.</p>
+                        <p><strong>Step 2:</strong> Submit the completed application form along with all required
+                            documents.</p>
+                        <p><strong>Step 3:</strong> Attend the interaction session with school management (if
+                            applicable).</p>
+                        <p><strong>Step 4:</strong> Upon selection, complete the fee payment and other formalities.</p>
+                    </div>
+                    <div>
+                        <h3>📞 Admission Enquiries</h3>
+                        <div style="padding: 1rem; background: var(--light); border-radius: 10px;">
+                            <p><strong>Contact Us:</strong></p>
+                            <p>Call: 9789021010</p>
+                            <p>Email: karthik.sch@gmail.com</p>
+                            <p>Visit: #54/6, Ambal Nagar, Senneerkuppam, Poonamallee, Chennai - 600 056</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1515,176 +1574,124 @@
         </section>
     </div>
 
-    <div id="contact" class="page">
-        <section class="section section-alt">
-            <div class="container">
-                <h2 class="section-title">Contact Us</h2>
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <h3>📍 Our Location</h3>
-                        <div class="contact-info">
-                            <p style="line-height: 1.8;">
-                                <strong>Karthik Matriculation Hr. Sec. School</strong><br>
-                                (Ranganathan Punithavathi Ammal Memorial Educational Trust)<br><br>
-                                #54/6, Ambal Nagar<br>
-                                (Behind EB), Senneerkuppam<br>
-                                Poonamallee<br>
-                                Chennai - 600 056<br>
-                                Tamil Nadu, India
-                            </p>
-                        </div>
-                    </div>
 
-                    <div class="contact-card">
-                        <h3>📞 Get in Touch</h3>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <span style="font-size: 1.5rem;">📱</span>
-                                <div>
-                                    <strong>Phone:</strong><br>
-                                    <a href="tel:9789021010">9789021010</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <span style="font-size: 1.5rem;">✉️</span>
-                                <div>
-                                    <strong>Email:</strong><br>
-                                    <a href="mailto:karthik.sch@gmail.com">karthik.sch@gmail.com</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <span style="font-size: 1.5rem;">🌐</span>
-                                <div>
-                                    <strong>Website:</strong><br>
-                                    <a href="https://karthikschool.com" target="_blank">karthikschool.com</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="contact-card">
-                        <h3>🌐 Follow Us</h3>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <span style="font-size: 1.5rem;">📘</span>
-                                <div>
-                                    <strong>Facebook:</strong><br>
-                                    <a href="https://facebook.com/karthikmatriculationschool"
-                                        target="_blank">@karthikmatriculationschool</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <span style="font-size: 1.5rem;">📸</span>
-                                <div>
-                                    <strong>Instagram:</strong><br>
-                                    <a href="https://instagram.com/karthikmhss" target="_blank">@karthikmhss</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <span style="font-size: 1.5rem;">📍</span>
-                                <div>
-                                    <strong>Google Maps:</strong><br>
-                                    <a href="https://maps.google.com/?q=Karthik+Matriculation+School+Senneerkuppam"
-                                        target="_blank">View on Map</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="management-message" style="margin-top: 3rem;">
-                    <h3>📅 Office Hours</h3>
-                    <p><strong>Monday to Friday:</strong> 9:00 AM - 4:00 PM</p>
-                    <p><strong>Saturday:</strong> 9:00 AM - 1:00 PM</p>
-                    <p><strong>Sunday:</strong> Closed</p>
-                    <p style="margin-top: 1.5rem; font-style: italic; color: #666;">
-                        For urgent matters outside office hours, please call our main contact number.
-                    </p>
-                </div>
-            </div>
-        </section>
-    </div>
+
+
 
     <!-- Footer Section -->
 
 
     <footer>
         <div class="footer-content"
-            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; text-align: left; padding-bottom: 2rem;">
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; text-align: left; padding-bottom: 2rem;">
 
+            <!-- Office Hours -->
             <div class="footer-section">
-                <h3 style="color: var(--accent); margin-bottom: 1rem;">Contact Us</h3>
-                <p><strong>Karthik Matriculation Hr. Sec. School</strong></p>
-                <p>#54/6, Ambal Nagar, Senneerkuppam,</p>
-                <p>Poonamallee, Chennai - 600 056</p>
-                <p style="margin-top: 1rem;">📞 9789021010</p>
-                <p>✉️ karthik.sch@gmail.com</p>
+                <h3 style="color: var(--accent); margin-bottom: 1rem;">🕐 Office Hours</h3>
+                <p><strong>Monday - Friday:</strong><br>8:30 AM - 4:30 PM</p>
+                <p><strong>Saturday:</strong><br>9:00 AM - 1:00 PM</p>
+                <p><strong>Sunday:</strong><br>Closed</p>
             </div>
 
+            <!-- Address -->
             <div class="footer-section">
-                <h3 style="color: var(--accent); margin-bottom: 1rem;">Quick Links</h3>
-                <div class="footer-links" style="display: flex; flex-direction: column; gap: 0.5rem;">
-                    <a onclick="navigateTo('home')">Home</a>
-                    <a onclick="navigateTo('about')">About</a>
-                    <a onclick="navigateTo('academics')">Academics</a>
-                    <a onclick="navigateTo('facilities')">Facilities</a>
-                    <a onclick="navigateTo('gallery')">Gallery</a>
-                    <a onclick="navigateTo('admissions')">Admissions</a>
-                    <a onclick="navigateTo('contact')">Contact</a>
-                </div>
+                <h3 style="color: var(--accent); margin-bottom: 1rem;">📍 Location</h3>
+                <p style="margin-bottom: 0.5rem;"><strong>Karthik Matriculation Hr. Sec. School</strong></p>
+                <p>#54/6, Ambal Nagar, Senneerkuppam, Poonamallee, Chennai - 600 056</p>
             </div>
 
+            <!-- Map -->
             <div class="footer-section">
-                <h3 style="color: var(--accent); margin-bottom: 1rem;">Connect With Us</h3>
-                <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
-                    <a href="https://facebook.com" target="_blank" style="text-decoration: none;" title="Facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="#fff">
-                            <path
-                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                        </svg>
-                    </a>
-                    <a href="https://instagram.com" target="_blank" style="text-decoration: none;" title="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
-                            fill="url(#ig-grad-footer)">
-                            <defs>
-                                <linearGradient id="ig-grad-footer" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#f09433;stop-opacity:1" />
-                                    <stop offset="25%" style="stop-color:#e6683c;stop-opacity:1" />
-                                    <stop offset="50%" style="stop-color:#dc2743;stop-opacity:1" />
-                                    <stop offset="75%" style="stop-color:#cc2366;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#bc1888;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <path
-                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.849-.069-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                        </svg>
-                    </a>
-                    <a href="https://youtube.com" target="_blank" style="text-decoration: none;" title="YouTube">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
-                            fill="#FF0000">
-                            <path
-                                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
-                        </svg>
-                    </a>
-                </div>
+                <h3 style="color: var(--accent); margin-bottom: 1rem;">🗺️ Map</h3>
                 <div
-                    style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden; border: 2px solid rgba(255,255,255,0.2);">
+                    style="width: 100%; height: 150px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.2);">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15545.6789!2d80.1!3d13.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAwJzAwLjAiTiA4MMKwMDYnMDAuMCJF!5e0!3m2!1sen!2sin!4v1630000000000!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1943.3!2d80.09!3d13.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAyJzI0LjAiTiA4MMKwMDUnMjQuMCJF!5e0!3m2!1sen!2sin!4v1630000000000!5m2!1sen!2sin"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
             </div>
 
+            <!-- Get in Touch -->
+            <div class="footer-section">
+                <h3 style="color: var(--accent); margin-bottom: 1rem;">📞 Get in Touch</h3>
+                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    <div>
+                        <strong>Phone:</strong><br>
+                        <a href="tel:9789021010" style="color: white; text-decoration: none;">9789021010</a>
+                    </div>
+                    <div>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:karthik.sch@gmail.com"
+                            style="color: white; text-decoration: none;">karthik.sch@gmail.com</a>
+                    </div>
+                    <div>
+                        <strong>Website:</strong><br>
+                        <a href="https://karthikschool.com" target="_blank"
+                            style="color: white; text-decoration: none;">karthikschool.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Follow Us -->
+            <div class="footer-section">
+                <h3 style="color: var(--accent); margin-bottom: 1rem;">Follow Us</h3>
+                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <a href="https://facebook.com/karthikmatriculationschool" target="_blank" title="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="#1877F2">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com/karthikmatriculationschool" target="_blank"
+                            style="color: white; text-decoration: none;">@karthikmatriculationschool</a>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <a href="https://www.instagram.com/karthikmhss/" target="_blank" title="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="url(#ig-grad)">
+                                <defs>
+                                    <linearGradient id="ig-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#f09433;stop-opacity:1" />
+                                        <stop offset="25%" style="stop-color:#e6683c;stop-opacity:1" />
+                                        <stop offset="50%" style="stop-color:#dc2743;stop-opacity:1" />
+                                        <stop offset="75%" style="stop-color:#cc2366;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#bc1888;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.849-.069-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/karthikmhss/" target="_blank"
+                            style="color: white; text-decoration: none;">@karthikmhss</a>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <a href="https://www.youtube.com/@karthikmatriculationhrsecs7756" target="_blank"
+                            title="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="#FF0000">
+                                <path
+                                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@karthikmatriculationhrsecs7756" target="_blank"
+                            style="color: white; text-decoration: none;">@karthikmatriculationhrsecs7756</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div
             style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; margin-top: 1rem;">
             <p>&copy; 2025 Karthik Matriculation Higher Secondary School. All rights reserved.</p>
-            <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">Ranganathan Punithavathi Ammal Memorial
-                Educational Trust</p>
         </div>
     </footer>
+
 
     <script>
         function navigateTo(pageId) {
@@ -1709,11 +1716,7 @@
         function toggleMenu() {
             var navLinks = document.querySelector('.nav-links');
             if (navLinks) {
-                if (navLinks.style.display === 'flex') {
-                    navLinks.style.display = 'none';
-                } else {
-                    navLinks.style.display = 'flex';
-                }
+                navLinks.classList.toggle('active');
             }
         }
 
