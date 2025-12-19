@@ -673,6 +673,21 @@
 
 
         @media (max-width: 768px) {
+
+            /* Header mobile styles */
+            .logo {
+                font-size: 1rem;
+                gap: 0.5rem;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .nav-container {
+                padding: 0.5rem 1rem;
+            }
+
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -725,6 +740,21 @@
             .vision-mission,
             .admission-grid {
                 grid-template-columns: 1fr;
+            }
+
+            /* Footer mobile styles */
+            .footer-content {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+                padding: 1.5rem !important;
+            }
+
+            .footer-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .footer-section {
+                text-align: left;
             }
         }
 
