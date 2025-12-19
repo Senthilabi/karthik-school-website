@@ -1740,6 +1740,12 @@
                 navLinks[i].classList.remove('active');
             }
 
+            // Close mobile menu after navigation
+            var mobileMenu = document.querySelector('.nav-links');
+            if (mobileMenu && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+            }
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
