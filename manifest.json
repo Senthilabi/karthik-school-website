@@ -1,0 +1,23 @@
+{
+  "name": "Karthik matriculation higher secondary school",
+  "short_name": "Karthik School",
+  "description": "Excellence in Education Since 1997",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#003366",
+  "theme_color": "#003366",
+  "icons": [
+    {
+      "src": "assets/images/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

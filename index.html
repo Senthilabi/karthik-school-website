@@ -2,9 +2,21 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-PLACEHOLDER');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karthik Matriculation Hr. Sec. School | Excellence Since 1997</title>
+    <meta name="theme-color" content="#003366">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/images/logo.jpg">
+    <title>Karthik matriculation higher secondary school | Excellence Since 1997</title>
     <style>
         * {
             margin: 0;
@@ -808,6 +820,135 @@
                 grid-template-columns: repeat(4, 1fr);
             }
         }
+
+        /* --- Chatbot Styles --- */
+        #chatbot-bubble {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 2000;
+            transition: transform 0.3s ease;
+        }
+
+        #chatbot-bubble:hover {
+            transform: scale(1.1);
+        }
+
+        #chatbot-window {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            width: 350px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 2000;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            font-size: 1.4rem;
+            margin: 0;
+        }
+
+        .close-chat {
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .chat-body {
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: #f9fafb;
+        }
+
+        .chat-msg {
+            margin-bottom: 15px;
+            max-width: 85%;
+        }
+
+        .bot-msg {
+            background: #e2e8f0;
+            padding: 12px;
+            border-radius: 15px 15px 15px 5px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        .chat-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .chat-form input,
+        .chat-form select {
+            padding: 10px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .chat-submit {
+            background: var(--primary);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .chat-submit:hover {
+            background: #002244;
+        }
+
+        @media (max-width: 480px) {
+            #chatbot-window {
+                width: calc(100% - 40px);
+                right: 20px;
+                bottom: 100px;
+            }
+        }
     </style>
 </head>
 
@@ -816,7 +957,7 @@
         <div class="nav-container">
             <div class="logo">
                 <img src="assets/images/logo.jpg" alt="Karthik School Logo">
-                <span>KARTHIK SCHOOL</span>
+                <span>Karthik matriculation higher secondary school</span>
             </div>
             <ul class="nav-links">
                 <li><a onclick="navigateTo('home')" class="active">Home</a></li>
@@ -834,7 +975,7 @@
     <div id="home" class="page active">
         <section class="hero">
             <div class="hero-content">
-                <h1>KARTHIK MATRICULATION HR. SEC. SCHOOL</h1>
+                <h1>Karthik matriculation higher secondary school</h1>
                 <p style="font-size: 1rem; margin-bottom: 1rem; opacity: 0.9;">(Ranganathan Punithavathi Ammal Memorial
                     Educational Trust)</p>
                 <p>Success Through Learning, Transforming Dreams into Reality</p>
@@ -927,7 +1068,7 @@
             <div class="container">
                 <h2 class="section-title">About Us</h2>
                 <div class="about-intro">
-                    <p>Since its inception in 1997, Karthik Matriculation Higher Secondary School has embarked on a
+                    <p>Since its inception in 1997, Karthik matriculation higher secondary school has embarked on a
                         transformative journey, beginning with the introduction of kindergarten and primary classes.
                         Through unwavering dedication and continuous efforts, we have evolved into a distinguished
                         Matriculation Higher Secondary School.</p>
@@ -939,7 +1080,7 @@
                 <div class="vision-mission">
                     <div class="vm-card">
                         <h3>🎯 Our Vision</h3>
-                        <p style="font-style: italic; color: var(--secondary); margin-bottom: 1rem;">"எண்ணென்ப ஏனை
+                        <p style="font-style: italic; color: var(--accent); margin-bottom: 1rem;">"எண்ணென்ப ஏனை
                             எழுத்தென்ப இவ்விரண்டும் கண்ணென்ப வாழும் உயிர்க்கு"</p>
                         <p>Our mission is to nurture and empower students, guiding them towards becoming well-rounded
                             individuals in their social, economic, political and personal spheres. Established with the
@@ -976,7 +1117,7 @@
                         <div class="management-info">
                             <h3>Mr. S. KARTHIKEYAN</h3>
                             <div class="role">Correspondent</div>
-                            <div class="qualification">M.S.W</div>
+                            <div class="qualification">M.S.W.</div>
                         </div>
                     </div>
                     <div class="management-card">
@@ -1020,14 +1161,14 @@
                     <p>I am humbled and honored to witness the profound impact that education has on the lives of our
                         students. Education is not just about acquiring knowledge; it is a journey of self-discovery,
                         empowerment, and transformation.</p>
-                    <p>At Karthik Matriculation Higher Secondary School, we believe that education is the key to
+                    <p>At Karthik matriculation higher secondary school, we believe that education is the key to
                         unlocking endless possibilities and shaping a brighter future. It is through education that
                         children develop the skills, knowledge, and confidence to navigate life's challenges and pursue
                         their dreams with determination.</p>
                     <p>Through our holistic approach to education, we aim to foster not only academic excellence but
-                        also the development of character, values, and social responsibility. We firmly believe that a
+                        also the development of character, values and social responsibility. We firmly believe that a
                         school plays a pivotal role in shaping a child's behavior and outlook towards life.</p>
-                    <p>Together, let us nurture the next generation of leaders, innovators, and changemakers who will
+                    <p>Together, let us nurture the next generation of leaders, innovators and changemakers who will
                         make a difference in the world.</p>
                     <p style="margin-top: 1.5rem;"><em>- Ms. K. Indumathi, Director</em></p>
                 </div>
@@ -1086,7 +1227,7 @@
                     </div>
                     <div class="group-card">
                         <h3>GROUP 2</h3>
-                        <p style="margin-bottom: 1rem; opacity: 0.9;">Medical & Allied Sciences</p>
+                        <p style="margin-bottom: 1rem; opacity: 0.9;">Medical and Engineering</p>
                         <ul>
                             <li>Mathematics</li>
                             <li>Physics</li>
@@ -1096,7 +1237,7 @@
                     </div>
                     <div class="group-card">
                         <h3>GROUP 3</h3>
-                        <p style="margin-bottom: 1rem; opacity: 0.9;">Pure Biology Stream</p>
+                        <p style="margin-bottom: 1rem; opacity: 0.9;">Medical and allied science</p>
                         <ul>
                             <li>Physics</li>
                             <li>Chemistry</li>
@@ -1116,7 +1257,7 @@
                     </div>
                     <div class="group-card">
                         <h3>GROUP 5</h3>
-                        <p style="margin-bottom: 1rem; opacity: 0.9;">Commerce with Maths</p>
+                        <p style="margin-bottom: 1rem; opacity: 0.9;">Commerce with Business Maths</p>
                         <ul>
                             <li>Economics</li>
                             <li>Commerce</li>
@@ -1341,9 +1482,9 @@
                     <h3>🕐 School Hours</h3>
                     <div class="hours-grid">
                         <div class="hours-item">
-                            <strong>Happykidz -Jr (KG)</strong>
+                            <strong>Happy Kidzzz -Jr (KG)</strong>
                             <div>8:45 AM - 12:30 PM</div>
-                            <strong>Happykidz -Sr (KG)</strong>
+                            <strong>Happy Kidzzz -Sr (KG)</strong>
                             <div>8:45 AM - 3:00 PM</div>
                         </div>
                         <div class="hours-item">
@@ -1431,7 +1572,7 @@
                                         </div>
                                     </div>
 
-                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                    <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
                                         <div>
                                             <label
                                                 style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Class
@@ -1455,14 +1596,6 @@
                                                 <option value="XII">Class XII</option>
                                             </select>
                                         </div>
-                                        <div>
-                                            <label
-                                                style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Blood
-                                                Group</label>
-                                            <input type="text" name="bloodGroup"
-                                                style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;"
-                                                placeholder="e.g., O+">
-                                        </div>
                                     </div>
 
                                     <div>
@@ -1477,13 +1610,6 @@
                                         <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Mother
                                             Tongue *</label>
                                         <input type="text" name="motherTongue" required
-                                            style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
-                                    </div>
-
-                                    <div>
-                                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Religion
-                                            / Caste / Community *</label>
-                                        <input type="text" name="community" required
                                             style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
                                     </div>
                                 </div>
@@ -1735,7 +1861,7 @@
             <!-- Address -->
             <div class="footer-section">
                 <h3 style="color: var(--accent); margin-bottom: 1rem;">📍 Location</h3>
-                <p style="margin-bottom: 0.5rem;"><strong>Karthik Matriculation Hr. Sec. School</strong></p>
+                <p style="margin-bottom: 0.5rem;"><strong>Karthik matriculation higher secondary school</strong></p>
                 <p>#54/6, Ambal Nagar, Senneerkuppam, Poonamallee, Chennai - 600 056</p>
             </div>
 
@@ -1806,7 +1932,19 @@
                             </svg>
                         </a>
                         <a href="https://www.instagram.com/karthikschool_poonamallee?igsh=MXM4MzRiczl5bzNuNQ=="
-                            target="_blank" style="color: white; text-decoration: none;">@karthikschool_poonamalle</a>
+                            target="_blank" style="color: white; text-decoration: none;">@karthikschool_poonamallee</a>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <a href="https://www.instagram.com/happykidzzz_kmhss?igsh=MXJkaXppYWNqaDlpbg==&utm_source=qr"
+                            target="_blank" title="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="url(#ig-grad)">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.849-.069-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/happykidzzz_kmhss?igsh=MXJkaXppYWNqaDlpbg==&utm_source=qr"
+                            target="_blank" style="color: white; text-decoration: none;">@happykidzzz_kmhss</a>
                     </div>
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
                         <a href="https://www.youtube.com/@karthikmatriculationhrsecs7756" target="_blank"
@@ -1826,7 +1964,7 @@
 
         <div
             style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; margin-top: 1rem;">
-            <p>&copy; 2025 Karthik Matriculation Higher Secondary School. All rights reserved.</p>
+            <p>&copy; 2025 Karthik matriculation higher secondary school. All rights reserved.</p>
         </div>
     </footer>
 
@@ -1952,6 +2090,61 @@
 
         // Initialize Events on Load
         window.addEventListener('load', renderEvents);
+    </script>
+    <!-- Chatbot UI -->
+    <div id="chatbot-bubble">💬</div>
+    <div id="chatbot-window">
+        <div class="chat-header">
+            <h3>Karthik School Support</h3>
+            <span class="close-chat" onclick="toggleChat()">&times;</span>
+        </div>
+        <div class="chat-body" id="chat-content">
+            <div class="chat-msg bot-msg">
+                Welcome to Karthik matriculation higher secondary school! How can we help you today?
+            </div>
+            <div class="chat-msg bot-msg">
+                Please leave your details below, and our admission team will contact you shortly.
+            </div>
+
+            <form action="https://formsubmit.co/karthik.sch@gmail.com" method="POST" class="chat-form">
+                <input type="hidden" name="_subject" value="New Inquiry from Website Chatbot">
+                <input type="hidden" name="_captcha" value="false">
+
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Mobile Number" required pattern="[0-9]{10}">
+                <select name="class_interest" required>
+                    <option value="">Interested in Class?</option>
+                    <option value="LKG/UKG">Kindergarten</option>
+                    <option value="Primary">Primary (I-V)</option>
+                    <option value="Middle">Middle (VI-VIII)</option>
+                    <option value="High">High (IX-X)</option>
+                    <option value="Hr Sec">Higher Sec (XI-XII)</option>
+                </select>
+                <button type="submit" class="chat-submit">Send Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            var chat = document.getElementById('chatbot-window');
+            if (chat.style.display === 'flex') {
+                chat.style.display = 'none';
+            } else {
+                chat.style.display = 'flex';
+            }
+        }
+        document.getElementById('chatbot-bubble').onclick = toggleChat;
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('sw.js').then(function (registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function (err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
     </script>
     <script src="https://static.elfsight.com/platform/platform.js" async></script>
 
