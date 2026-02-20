@@ -892,54 +892,207 @@
         }
 
         .chat-body {
-            padding: 20px;
-            max-height: 400px;
+            padding: 15px;
+            height: 350px;
             overflow-y: auto;
             background: #f9fafb;
-        }
-
-        .chat-msg {
-            margin-bottom: 15px;
-            max-width: 85%;
-        }
-
-        .bot-msg {
-            background: #e2e8f0;
-            padding: 12px;
-            border-radius: 15px 15px 15px 5px;
-            color: #333;
-            font-size: 1.1rem;
-        }
-
-        .chat-form {
             display: flex;
             flex-direction: column;
             gap: 12px;
+        }
+
+        .chat-msg {
+            max-width: 85%;
+            padding: 12px 16px;
+            font-size: 1rem;
+            line-height: 1.4;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bot-msg {
+            align-self: flex-start;
+            background: #e2e8f0;
+            color: #333;
+            border-radius: 15px 15px 15px 5px;
+        }
+
+        .user-msg {
+            align-self: flex-end;
+            background: var(--primary);
+            color: white;
+            border-radius: 15px 15px 5px 15px;
+        }
+
+        .chat-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 5px;
+            align-self: flex-start;
+            width: 100%;
+        }
+
+        .chat-option {
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: fit-content;
+        }
+
+        .chat-option:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .chat-input-area {
+            display: flex;
+            padding: 10px;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            gap: 10px;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .chat-send-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .chat-form {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
             margin-top: 10px;
         }
 
         .chat-form input,
         .chat-form select {
-            padding: 10px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1rem;
-            outline: none;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
-        .chat-submit {
-            background: var(--primary);
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
+        /* --- Notifications Page Styles --- */
+        .notifications-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 2rem auto;
         }
 
-        .chat-submit:hover {
-            background: #002244;
+        .notification-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 6px solid var(--primary);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .notification-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification-card.urgent {
+            border-left-color: #ef4444;
+        }
+
+        .notification-card.event {
+            border-left-color: var(--secondary);
+        }
+
+        .notification-card.info {
+            border-left-color: #3b82f6;
+        }
+
+        .notification-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .notification-date {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .notification-badge {
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge-urgent {
+            background: #fee2e2;
+            color: #ef4444;
+        }
+
+        .badge-event {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .badge-info {
+            background: #dbeafe;
+            color: #3b82f6;
+        }
+
+        .notification-card h3 {
+            color: #1e293b;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            margin-top: 0;
+        }
+
+        .notification-card p {
+            color: #475569;
+            line-height: 1.6;
+            font-size: 1.05rem;
+            margin-bottom: 0;
         }
 
         @media (max-width: 480px) {
@@ -967,6 +1120,7 @@
                 <li><a onclick="navigateTo('gallery')">Gallery</a></li>
                 <li><a onclick="navigateTo('admissions')">Admissions</a></li>
                 <li><a onclick="navigateTo('events')">Events</a></li>
+                <li><a onclick="navigateTo('notifications')">Notifications</a></li>
             </ul>
             <div class="mobile-menu" onclick="toggleMenu()">☰</div>
         </div>
@@ -1056,6 +1210,39 @@
                         <div class="facility-content">
                             <h3>Kreedo Curriculum</h3>
                             <p>Innovative kindergarten program through play-based learning for holistic development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Campus Highlights</h2>
+                <div class="gallery-grid" style="margin-top: 1rem;">
+                    <div class="gallery-item">
+                        <img src="assets/images/WhatsApp Image 2026-02-18 at 06.29.09.jpeg" class="gallery-image"
+                            alt="Campus View">
+                        <div class="gallery-caption">
+                            <h3>Vibrant Campus</h3>
+                            <p>Our expansive school grounds providing a safe environment for learning and discovery.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/WhatsApp Image 2026-02-18 at 06.29.06.jpeg" class="gallery-image"
+                            alt="Smart Classroom">
+                        <div class="gallery-caption">
+                            <h3>Smart Classrooms</h3>
+                            <p>Engaging learning environments equipped with modern digital tools for better
+                                understanding.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/WhatsApp Image 2026-02-18 at 06.29.12.jpeg" class="gallery-image"
+                            alt="Morning Prayer">
+                        <div class="gallery-caption">
+                            <h3>Spiritual Growth</h3>
+                            <p>Instilling values and discipline through our peaceful morning assembly and prayers.</p>
                         </div>
                     </div>
                 </div>
@@ -1204,13 +1391,29 @@
 
                 <div class="management-message">
                     <h3>🎓 Curriculum Framework</h3>
-                    <p><strong>Kindergarten - Kreedo Curriculum:</strong> Our kindergarten program focuses on Literacy
-                        skills (Language), Numeracy skills (Maths), Themes (EVS), Sensorial skills and Cognitive skills.
-                        All these areas of development begin with play or activities first through our Kreedo lab,
-                        helping improve the socio-emotional quotient in children.</p>
-                    <p><strong>Primary to Higher Secondary - Samacheer Kalvi:</strong> We follow the Samacheer Kalvi
-                        syllabus, ensuring comprehensive education aligned with state board standards while
-                        incorporating modern teaching methodologies.</p>
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: center;">
+                        <div>
+                            <p><strong>Kindergarten - Kreedo Curriculum:</strong> Our kindergarten program focuses on
+                                Literacy
+                                skills (Language), Numeracy skills (Maths), Themes (EVS), Sensorial skills and Cognitive
+                                skills.
+                                All these areas of development begin with play or activities first through our Kreedo
+                                lab,
+                                helping improve the socio-emotional quotient in children.</p>
+                            <p style="margin-top: 1rem;"><strong>Primary to Higher Secondary - Samacheer Kalvi:</strong>
+                                We follow the Samacheer Kalvi
+                                syllabus, ensuring comprehensive education aligned with state board standards while
+                                incorporating modern teaching methodologies.</p>
+                        </div>
+                        <div class="gallery-item" style="cursor: default;">
+                            <img src="assets/images/WhatsApp Image 2026-02-18 at 06.29.10.jpeg" class="gallery-image"
+                                alt="Kreedo Kindergarten Classroom" style="height: 250px;">
+                            <div class="gallery-caption">
+                                <p>Interactive Kreedo Lab for our young learners</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <h2 class="section-title" style="margin-top: 3rem;">Higher Secondary Groups</h2>
@@ -1392,7 +1595,8 @@
                     </div>
 
                     <div class="gallery-item">
-                        <img src="assets/images/morning-assembly.jpg" class="gallery-image" alt="Morning Assembly">
+                        <img src="assets/images/WhatsApp Image 2026-02-18 at 06.29.12.jpeg" class="gallery-image"
+                            alt="Morning Assembly">
                         <div class="gallery-caption">
                             <h3>Morning Assembly</h3>
                             <p>Starting the day with energy and focus</p>
@@ -1400,34 +1604,38 @@
                     </div>
 
                     <div class="gallery-item">
-                        <div class="gallery-image">⚽</div>
-                        <div class="gallery-caption">
-                            <h3>Sports Activities</h3>
-                            <p>Promoting fitness and teamwork</p>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="gallery-image">🔬</div>
+                        <img src="assets/images/WhatsApp Image 2026-02-18 at 06.29.07.jpeg" class="gallery-image"
+                            alt="Science Laboratory">
                         <div class="gallery-caption">
                             <h3>Science Laboratory</h3>
-                            <p>Hands-on experiments and discovery</p>
+                            <p>Hands-on experiments and discovery in our advanced labs</p>
                         </div>
                     </div>
 
                     <div class="gallery-item">
-                        <div class="gallery-image">📖</div>
+                        <img src="assets/images/WhatsApp Image 2026-02-18 at 06.29.06.jpeg" class="gallery-image"
+                            alt="Interactive Classroom">
                         <div class="gallery-caption">
-                            <h3>Library</h3>
-                            <p>A world of knowledge and learning</p>
+                            <h3>Interactive Learning</h3>
+                            <p>Students engaged in digital learning sessions</p>
                         </div>
                     </div>
 
                     <div class="gallery-item">
-                        <img src="assets/images/cultural-event.jpg" class="gallery-image" alt="Cultural Event">
+                        <img src="assets/images/WhatsApp Image 2026-02-18 at 06.29.10.jpeg" class="gallery-image"
+                            alt="Kindergarten Lab">
+                        <div class="gallery-caption">
+                            <h3>Kindergarten (Kreedo)</h3>
+                            <p>A world of discovery for our little stars</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="assets/images/WhatsApp Image 2026-02-18 at 08.48.44.jpeg" class="gallery-image"
+                            alt="Cultural Event">
                         <div class="gallery-caption">
                             <h3>Cultural Events</h3>
-                            <p>Celebrating talent and creativity</p>
+                            <p>Celebrating talent, tradition, and creativity</p>
                         </div>
                     </div>
                 </div>
@@ -1815,14 +2023,14 @@
                             <div
                                 style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
                                 <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                                    src="https://www.youtube.com/embed?listType=user_uploads&list=karthikmatriculationhrsecs7756"
+                                    src="https://www.youtube.com/embed?listType=user_uploads&list=karthikmatriculationhrsec7756"
                                     title="Latest Videos" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen>
                                 </iframe>
                             </div>
                             <div style="text-align: center;">
-                                <a href="https://www.youtube.com/@karthikmatriculationhrsecs7756" target="_blank"
+                                <a href="https://www.youtube.com/@karthikmatriculationhrsec7756" target="_blank"
                                     class="btn btn-primary">
                                     View All Videos on YouTube
                                 </a>
@@ -1845,6 +2053,22 @@
 
     <!-- Footer Section -->
 
+
+    <div id="notifications" class="page">
+        <section class="section" style="background: #f8fafc; min-height: 80vh;">
+            <div class="container">
+                <h2 class="section-title">Latest Notifications</h2>
+                <p style="text-align: center; color: #64748b; margin-top: -1.5rem; margin-bottom: 2rem;">Stay updated
+                    with the latest news and announcements from Karthik School.</p>
+                <div id="notifications-container" class="notifications-grid">
+                    <div style="text-align: center; width: 100%; color: #666; padding: 2rem;">
+                        <span style="display: inline-block; animation: spin 1s linear infinite;">⌛</span> Loading
+                        notifications...
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <footer>
         <div class="footer-content"
@@ -1947,7 +2171,7 @@
                             target="_blank" style="color: white; text-decoration: none;">@happykidzzz_kmhss</a>
                     </div>
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <a href="https://www.youtube.com/@karthikmatriculationhrsecs7756" target="_blank"
+                        <a href="https://www.youtube.com/@karthikmatriculationhrsec7756" target="_blank"
                             title="YouTube">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
                                 fill="#FF0000">
@@ -1955,8 +2179,8 @@
                                     d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
                             </svg>
                         </a>
-                        <a href="https://www.youtube.com/@karthikmatriculationhrsecs7756" target="_blank"
-                            style="color: white; text-decoration: none;">@karthikmatriculationhrsecs7756</a>
+                        <a href="https://www.youtube.com/@karthikmatriculationhrsec7756" target="_blank"
+                            style="color: white; text-decoration: none;">@karthikmatriculationhrsec7756</a>
                     </div>
                 </div>
             </div>
@@ -2090,6 +2314,84 @@
 
         // Initialize Events on Load
         window.addEventListener('load', renderEvents);
+
+        // --- Notifications CMS Logic ---
+        var CMS_CONFIG = {
+            // Replace 'PLACEHOLDER' with your published Google Sheets CSV URL
+            spreadsheetUrl: 'PLACEHOLDER',
+            refreshInterval: 300000 // 5 minutes
+        };
+
+        function fetchNotifications() {
+            var container = document.getElementById('notifications-container');
+
+            // If placeholder, show some mock data for demonstration
+            if (CMS_CONFIG.spreadsheetUrl === 'PLACEHOLDER') {
+                var mockData = [
+                    { date: "20 May 2025", category: "Urgent", title: "Annual Science Exhibition Postponed", description: "Due to unforeseen circumstances, the exhibition is moved to June 5th." },
+                    { date: "15 May 2025", category: "Important", title: "Mid-Term Examination Schedule", description: "The time table for the upcoming mid-term exams has been posted on the notice board." },
+                    { date: "10 May 2025", category: "Info", title: "New KG Admissions Open", description: "We are now accepting applications for LKG and UKG for the upcoming academic year." }
+                ];
+                renderNotifications(mockData);
+                return;
+            }
+
+            fetch(CMS_CONFIG.spreadsheetUrl)
+                .then(response => response.text())
+                .then(csvText => {
+                    var notifications = parseCSV(csvText);
+                    renderNotifications(notifications);
+                })
+                .catch(err => {
+                    console.error("Error fetching notifications:", err);
+                    container.innerHTML = '<div style="text-align: center; color: #ef4444; padding: 2rem;">Unable to load notifications. Please check back later.</div>';
+                });
+        }
+
+        function parseCSV(text) {
+            var lines = text.split('\n');
+            var result = [];
+            var headers = lines[0].split(',');
+
+            for (var i = 1; i < lines.length; i++) {
+                if (!lines[i]) continue;
+                var obj = {};
+                var currentline = lines[i].split(',');
+
+                for (var j = 0; j < headers.length; j++) {
+                    obj[headers[j].trim().toLowerCase()] = currentline[j].trim();
+                }
+                result.push(obj);
+            }
+            return result;
+        }
+
+        function renderNotifications(data) {
+            var container = document.getElementById('notifications-container');
+            if (!data || data.length === 0) {
+                container.innerHTML = '<div style="text-align: center; color: #666; padding: 2rem;">No new notifications at this time.</div>';
+                return;
+            }
+
+            var html = '';
+            data.forEach(function (item) {
+                var categoryClass = (item.category || 'info').toLowerCase();
+                html += `
+                    <div class="notification-card ${categoryClass}">
+                        <div class="notification-header">
+                            <span class="notification-date">${item.date}</span>
+                            <span class="notification-badge badge-${categoryClass}">${item.category}</span>
+                        </div>
+                        <h3>${item.title}</h3>
+                        <p>${item.description || item.message}</p>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // Initialize Notifications
+        window.addEventListener('load', fetchNotifications);
     </script>
     <!-- Chatbot UI -->
     <div id="chatbot-bubble">💬</div>
@@ -2099,41 +2401,200 @@
             <span class="close-chat" onclick="toggleChat()">&times;</span>
         </div>
         <div class="chat-body" id="chat-content">
-            <div class="chat-msg bot-msg">
-                Welcome to Karthik Matriculation Higher Secondary School! How can we help you today?
-            </div>
-            <div class="chat-msg bot-msg">
-                Please leave your details below, and our admission team will contact you shortly.
-            </div>
-
-            <form action="https://formsubmit.co/karthik.sch@gmail.com" method="POST" class="chat-form">
-                <input type="hidden" name="_subject" value="New Inquiry from Website Chatbot">
-                <input type="hidden" name="_captcha" value="false">
-
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="tel" name="phone" placeholder="Mobile Number" required pattern="[0-9]{10}">
-                <select name="class_interest" required>
-                    <option value="">Interested in Class?</option>
-                    <option value="LKG/UKG">Kindergarten</option>
-                    <option value="Primary">Primary (I-V)</option>
-                    <option value="Middle">Middle (VI-VIII)</option>
-                    <option value="High">High (IX-X)</option>
-                    <option value="Hr Sec">Higher Sec (XI-XII)</option>
-                </select>
-                <button type="submit" class="chat-submit">Send Inquiry</button>
-            </form>
+            <!-- Messages will be injected here -->
+        </div>
+        <div class="chat-input-area" id="chatbot-input-area" style="display: none;">
+            <input type="text" id="chat-user-input" placeholder="Type your name...">
+            <button class="chat-send-btn" id="chat-send-btn">Send</button>
         </div>
     </div>
 
     <script>
+        var chatState = {
+            step: 'greeting',
+            userName: '',
+            userPhone: '',
+            pendingId: ''
+        };
+
+        function addMessage(type, text) {
+            var content = document.getElementById('chat-content');
+            var msgDiv = document.createElement('div');
+            msgDiv.className = 'chat-msg ' + type + '-msg';
+            msgDiv.textContent = text;
+            content.appendChild(msgDiv);
+            content.scrollTop = content.scrollHeight;
+        }
+
+        function addOptions(options) {
+            var content = document.getElementById('chat-content');
+            var optionsDiv = document.createElement('div');
+            optionsDiv.className = 'chat-options';
+
+            options.forEach(function (opt) {
+                var btn = document.createElement('button');
+                btn.className = 'chat-option';
+                btn.textContent = opt.text;
+                btn.onclick = function () {
+                    optionsDiv.remove();
+                    processInput(opt.text, opt.id);
+                };
+                optionsDiv.appendChild(btn);
+            });
+
+            content.appendChild(optionsDiv);
+            content.scrollTop = content.scrollHeight;
+        }
+
         function toggleChat() {
             var chat = document.getElementById('chatbot-window');
             if (chat.style.display === 'flex') {
                 chat.style.display = 'none';
             } else {
                 chat.style.display = 'flex';
+                if (chatState.step === 'greeting') {
+                    startChat();
+                }
             }
         }
+
+        function startChat() {
+            document.getElementById('chat-content').innerHTML = '';
+            addMessage('bot', "Hello! Welcome to Karthik School! 👋");
+            setTimeout(function () {
+                addMessage('bot', "May I have your name, please?");
+                document.getElementById('chatbot-input-area').style.display = 'flex';
+                document.getElementById('chat-user-input').placeholder = 'Type your name...';
+                chatState.step = 'awaiting_name';
+            }, 800);
+        }
+
+        function handleUserInput() {
+            var input = document.getElementById('chat-user-input');
+            var val = input.value.trim();
+            if (val) {
+                input.value = '';
+                processInput(val);
+            }
+        }
+
+        function processInput(text, id) {
+            addMessage('user', text);
+
+            if (chatState.step === 'awaiting_name') {
+                chatState.userName = text;
+                chatState.step = 'menu';
+                document.getElementById('chatbot-input-area').style.display = 'none';
+                setTimeout(function () {
+                    addMessage('bot', "It's a pleasure to meet you, " + chatState.userName + "! 😊");
+                    setTimeout(function () {
+                        addMessage('bot', "How can I help you today?");
+                        addOptions([
+                            { text: "📚 Admissions Info", id: 'admissions' },
+                            { text: "🏫 School Facilities", id: 'facilities' },
+                            { text: "📍 Contact & Location", id: 'contact' }
+                        ]);
+                    }, 600);
+                }, 800);
+                return;
+            }
+
+            if (chatState.step === 'menu') {
+                chatState.pendingId = id; // Store the selection
+                chatState.step = 'awaiting_phone';
+                document.getElementById('chatbot-input-area').style.display = 'flex';
+                document.getElementById('chat-user-input').placeholder = 'Type your mobile number...';
+
+                setTimeout(function () {
+                    var contextMsg = "";
+                    if (id === 'admissions') contextMsg = "I'd be happy to show you our admissions details!";
+                    else if (id === 'facilities') contextMsg = "I can definitely tell you more about our campus!";
+                    else if (id === 'contact') contextMsg = "Sure thing! I can provide our contact info.";
+
+                    addMessage('bot', contextMsg + " Before we continue, could you please share your contact number? This helps our team assist you better if you have further questions.");
+                }, 800);
+                return;
+            }
+
+            if (chatState.step === 'awaiting_phone') {
+                // Basic 10-digit validation
+                if (!/^[0-9]{10}$/.test(text.replace(/\s/g, ''))) {
+                    setTimeout(function () {
+                        addMessage('bot', "Please enter a valid 10-digit mobile number.");
+                    }, 800);
+                    return;
+                }
+                chatState.userPhone = text;
+                chatState.step = 'finalizing';
+                document.getElementById('chatbot-input-area').style.display = 'none';
+
+                var selectedId = chatState.pendingId;
+                setTimeout(function () {
+                    if (selectedId === 'admissions') {
+                        addMessage('bot', "We offer LKG to XII with Samacheer Kalvi syllabus. Our campus has smart labs and dedicated sports areas.");
+                        addOptions([
+                            { text: "📝 Apply Online", id: 'apply' },
+                            { text: "🔙 Back to Menu", id: 'menu_reset' }
+                        ]);
+                    } else if (selectedId === 'facilities') {
+                        addMessage('bot', "We have modern science labs, a library, smart classrooms, and a play-based Kreedo lab for kindergarten.");
+                        addOptions([{ text: "🔙 Back to Menu", id: 'menu_reset' }]);
+                    } else if (selectedId === 'contact' || selectedId === 'apply') {
+                        addMessage('bot', "Great! Please fill out this quick form and our team will get in touch with you shortly.");
+                        injectForm();
+                    }
+                }, 800);
+                return;
+            }
+
+            // Handle back/reset
+            if (id === 'menu_reset') {
+                chatState.step = 'menu';
+                setTimeout(function () {
+                    addMessage('bot', "What else would you like to know?");
+                    addOptions([
+                        { text: "📚 Admissions Info", id: 'admissions' },
+                        { text: "🏫 School Facilities", id: 'facilities' },
+                        { text: "📍 Contact & Location", id: 'contact' }
+                    ]);
+                }, 800);
+            } else if (id === 'apply') {
+                setTimeout(function () {
+                    addMessage('bot', "Great! Please fill out this quick form and our team will get in touch with you shortly.");
+                    injectForm();
+                }, 800);
+            }
+        }
+
+        function injectForm() {
+            var content = document.getElementById('chat-content');
+            var formHTML = `
+                <form action="https://formsubmit.co/karthik.sch@gmail.com" method="POST" class="chat-form">
+                    <input type="hidden" name="_subject" value="New Inquiry from ${chatState.userName}">
+                    <input type="hidden" name="name" value="${chatState.userName}">
+                    <input type="hidden" name="phone" value="${chatState.userPhone}">
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 5px;">I'm interested in class:</p>
+                    <select name="class_interest" required>
+                        <option value="">Select a Class</option>
+                        <option value="Kreedo">Kindergarten (Kreedo)</option>
+                        <option value="Primary">Primary (I-V)</option>
+                        <option value="Middle">Middle (VI-VIII)</option>
+                        <option value="High">High (IX-X)</option>
+                        <option value="Hr Sec">Higher Sec (XI-XII)</option>
+                    </select>
+                    <button type="submit" class="chat-submit">Submit Inquiry</button>
+                </form>
+            `;
+            var formDiv = document.createElement('div');
+            formDiv.innerHTML = formHTML;
+            content.appendChild(formDiv);
+            content.scrollTop = content.scrollHeight;
+        }
+
+        document.getElementById('chat-send-btn').onclick = handleUserInput;
+        document.getElementById('chat-user-input').onkeypress = function (e) {
+            if (e.key === 'Enter') handleUserInput();
+        };
         document.getElementById('chatbot-bubble').onclick = toggleChat;
 
         if ('serviceWorker' in navigator) {
